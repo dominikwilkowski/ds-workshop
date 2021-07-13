@@ -1,10 +1,21 @@
-import { getAllPkgs } from '../lib/mdxUtils';
+import { Highlight } from '../components/Highlight';
 import { Layout } from '../components/Layout';
+import { getAllPkgs } from '../lib/mdxUtils';
 
 export default function Homepage({ pkgs }) {
 	return (
 		<Layout pkgs={pkgs}>
-			<h1>Home Page</h1>
+			<Highlight
+				as="h1"
+				look="grad3"
+				css={{
+					display: 'inline-block',
+					fontWeight: 900,
+					fontSize: '3rem',
+				}}
+			>
+				Home Page
+			</Highlight>
 		</Layout>
 	);
 }
