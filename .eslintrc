@@ -1,0 +1,33 @@
+{
+	parser: 'babel-eslint',
+	env: {
+		browser: true,
+		es6: true,
+		node: true
+	},
+	plugins: ['react', '@emotion'],
+	parserOptions: {
+		ecmaVersion: 2018,
+		sourceType: 'module'
+	},
+	rules: {
+		'react/react-in-jsx-scope': 'off',
+		'no-unused-vars': [
+			error,
+			{
+				argsIgnorePattern: '_'
+			}
+		],
+		'react/prop-types': 0
+	},
+	extends: [
+		'eslint:recommended',
+		'plugin:react/recommended',
+		'prettier'
+	],
+	settings: {
+		react: {
+			version: 'detect'
+		}
+	}
+}

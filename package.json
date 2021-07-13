@@ -1,0 +1,54 @@
+{
+	"name": "design-system-workshop",
+	"description": "Design System Workshop",
+	"private": true,
+	"version": "0.0.0",
+	"author": "The Thinkmill Team",
+	"license": "GPL-3.0",
+	"repository": "https://github.com/dominikwilkowski/ds-workshop",
+	"homepage": "https://github.com/dominikwilkowski/ds-workshop",
+	"scripts": {
+		"docs": "manypkg run @ds-workshop/docs dev",
+		"format": "prettier --write \"**/*.{js,json,md,mdx}\"",
+		"test:eslint": "eslint . --ext js",
+		"test:prettier": "prettier --list-different \"**/*.{js,json,md,mdx}\"",
+		"test": "yarn test:prettier && yarn test:eslint",
+		"deps:fix": "manypkg fix && preconstruct fix",
+		"deps:check": "manypkg check",
+		"deps:dev": "preconstruct dev",
+		"build": "preconstruct build",
+		"nuke": "rm -rf node_modules && rm -rf .next rm -rf out && rm yarn.lock"
+	},
+	"dependencies": {
+		"@emotion/babel-plugin": "^11.3.0",
+		"@emotion/eslint-plugin": "^11.2.0",
+		"@emotion/react": "^11.4.0",
+		"@emotion/weak-memoize": "^0.2.5",
+		"@manypkg/cli": "^0.18.0",
+		"@preconstruct/cli": "2.1.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^7.30.0",
+		"eslint-config-next": "^11.0.1",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-react": "^7.24.0",
+		"gray-matter": "^4.0.3",
+		"next": "latest",
+		"next-mdx-remote": "^3.0.2",
+		"next-remote-watch": "1.0.0",
+		"prettier": "^2.3.2",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"yarn": "^1.22.10"
+	},
+	"workspaces": {
+		"packages": [
+			"packages/*",
+			"docs"
+		]
+	},
+	"preconstruct": {
+		"packages": [
+			"packages/*"
+		]
+	}
+}
