@@ -72,6 +72,7 @@ jobs:
       - run: yarn build:docs
         env:
           NEXT_PUBLIC_LIVE_SITE: 'true'
+          NEXT_PUBLIC_BASE_PATH: '/ds-workshop'
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
