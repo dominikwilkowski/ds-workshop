@@ -4,6 +4,10 @@
 	"scripts": {},
 	"main": "dist/ds-workshop-core.cjs.js",
 	"module": "dist/ds-workshop-core.esm.js",
+	"dependencies": {
+		"@babel/runtime": "^7.14.6",
+		"@emotion/react": "^11.4.0"
+	},
 	"peerDependencies": {
 		"react": "^17.0.2"
 	},

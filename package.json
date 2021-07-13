@@ -13,13 +13,15 @@
 		"test:eslint": "eslint . --ext js",
 		"test:prettier": "prettier --list-different \"**/*.{js,json,md,mdx}\"",
 		"test": "yarn test:prettier && yarn test:eslint",
-		"deps:fix": "manypkg fix && preconstruct fix",
-		"deps:check": "manypkg check",
-		"deps:dev": "preconstruct dev",
+		"dep:fix": "manypkg fix && preconstruct fix",
+		"dep:check": "manypkg check && preconstruct build && preconstruct dev",
+		"dep:dev": "preconstruct dev",
 		"build": "preconstruct build",
+		"build:docs": "manypkg run @ds-workshop/docs build && manypkg run @ds-workshop/docs export",
 		"nuke": "rm -rf node_modules && rm -rf .next rm -rf out && rm yarn.lock"
 	},
 	"dependencies": {
+		"@babel/runtime": "^7.14.6",
 		"@emotion/babel-plugin": "^11.3.0",
 		"@emotion/eslint-plugin": "^11.2.0",
 		"@emotion/react": "^11.4.0",
