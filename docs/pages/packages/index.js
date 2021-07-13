@@ -5,14 +5,7 @@ import { Layout } from '../../components/Layout';
 
 export default function PackagesHome({ pkgs }) {
 	return (
-		<Layout>
-			<header>
-				<nav>
-					<Link href="/">
-						<a>👈 Go back home</a>
-					</Link>
-				</nav>
-			</header>
+		<Layout pkgs={pkgs}>
 			<ul>
 				{pkgs.map(({ slug, name }) => (
 					<li key={slug}>

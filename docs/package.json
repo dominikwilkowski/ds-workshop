@@ -17,7 +17,9 @@
 	},
 	"dependencies": {
 		"@emotion/babel-plugin": "^11.3.0",
+		"@emotion/cache": "^11.4.0",
 		"@emotion/react": "^11.4.0",
+		"@emotion/server": "^11.4.0",
 		"@emotion/weak-memoize": "^0.2.5",
 		"@preconstruct/next": "^3.0.0",
 		"gray-matter": "^4.0.3",

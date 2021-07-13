@@ -1,20 +1,12 @@
 import { MDXRemote } from 'next-mdx-remote';
-import Link from 'next/link';
 
 import { getAllPkgs, getPkgBySlug } from '../../lib/mdxUtils';
 import { mdxComponents } from '../../components/utils';
 import { Layout } from '../../components/Layout';
 
-export default function Packages({ source, data }) {
+export default function Packages({ pkgs, source, data }) {
 	return (
-		<Layout>
-			<header>
-				<nav>
-					<Link href="/">
-						<a>👈 Go back home</a>
-					</Link>
-				</nav>
-			</header>
+		<Layout pkgs={pkgs}>
 			<div className="post-header">
 				<h1>{data.title}</h1>
 				{data.description && <p className="description">{data.description}</p>}
@@ -27,10 +19,12 @@ export default function Packages({ source, data }) {
 }
 
 export const getStaticProps = async ({ params: { slug } }) => {
+	const pkgs = await getAllPkgs();
 	const { source, data } = await getPkgBySlug(slug);
 
 	return {
 		props: {
+			pkgs,
 			source,
 			data,
 		},
