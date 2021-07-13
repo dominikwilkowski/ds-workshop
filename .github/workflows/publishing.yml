@@ -68,6 +68,7 @@ jobs:
         run: yarn --version
 
       - run: yarn install --frozen-lockfile
+      - run: yarn build
       - run: yarn build:docs
         env:
           NEXT_PUBLIC_LIVE_SITE: 'true'
