@@ -10,6 +10,6 @@
 	"devDependencies": {
 		"react": "^17.0.2"
 	},
-	"license": "MIT",
+	"license": "GPL-3.0",
 	"repository": "https://github.com/dominikwilkowski/ds-workshop/tree/master/packages/core"
 }
