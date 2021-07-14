@@ -38,8 +38,16 @@ function NextLink({ href, children, ...props }) {
 	);
 }
 
-function NewType(props) {
+function NewP(props) {
 	return <Type as="p" look="body18" {...props} />;
+}
+
+function NewLi({ children, ...props }) {
+	return (
+		<Type as="li" look="body18" {...props}>
+			{children}
+		</Type>
+	);
 }
 
 function InlineCode(props) {
@@ -236,7 +244,8 @@ const packages = {
 
 export const mdxComponents = {
 	a: NextLink,
-	p: NewType,
+	p: NewP,
+	li: NewLi,
 	h1: function H1(props) {
 		return (
 			<Highlight
