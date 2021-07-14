@@ -2,7 +2,7 @@ import { Gradients } from './util';
 
 export function GitHub({ look, ...props }) {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 22" aria-label="KeystoneJS on GitHub" role="img" {...props}>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 22" aria-label="GitHub" role="img" {...props}>
 			<Gradients name="GitHub" />
 			<path
 				fill={look ? `url(#GitHub-${look})` : 'currentColor'}
