@@ -172,7 +172,7 @@ export const Button = forwardRef(
 								height: '1em',
 								width: 'auto',
 								verticalAlign: 'middle',
-								margin: '0',
+								margin: 0,
 							},
 							...styleMap[look],
 							...sizeMap[size],

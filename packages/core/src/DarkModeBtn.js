@@ -12,16 +12,18 @@ export function DarkModeBtn(props) {
 		// first we check local storage, then fall back to system preferences until falling back to default 'light'
 		// in the end we sanitize the strings as who knows what systems give us what...
 		const detectedTheme =
-			(localStorage.getItem('theme') || window.matchMedia('(prefers-color-scheme: dark)').matches || 'light') === 'dark'
+			(localStorage.getItem('ds-workshop-theme') ||
+				window.matchMedia('(prefers-color-scheme: dark)').matches ||
+				'light') === 'dark'
 				? 'dark'
 				: 'light';
 		setTheme(detectedTheme);
-		localStorage.setItem('theme', detectedTheme);
+		localStorage.setItem('ds-workshop-theme', detectedTheme);
 
 		function changer(event) {
 			const detectedTheme = event.matches ? 'dark' : 'light';
 			setTheme(detectedTheme);
-			localStorage.setItem('theme', detectedTheme);
+			localStorage.setItem('ds-workshop-theme', detectedTheme);
 		}
 
 		window.matchMedia('(prefers-color-scheme: dark)').addListener(changer);
@@ -33,7 +35,7 @@ export function DarkModeBtn(props) {
 	function handleThemeChange() {
 		const newTheme = theme === 'dark' ? 'light' : 'dark';
 		setTheme(newTheme);
-		localStorage.setItem('theme', newTheme);
+		localStorage.setItem('ds-workshop-theme', newTheme);
 	}
 
 	return (

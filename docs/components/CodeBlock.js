@@ -19,6 +19,7 @@ export const CodeBlock = ({ className, code, demo, initialCompiledResult, live, 
 				maxWidth: '100%',
 				overflow: 'auto',
 				padding: 10,
+				margin: '1rem 0',
 
 				code: {
 					fontFamily: 'inherit',

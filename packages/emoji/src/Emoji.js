@@ -40,6 +40,8 @@ export function Emoji({ symbol, alt, ...props }) {
 					color: '#fff',
 					textAlign: 'center',
 					fontSize: '0.8rem',
+					whiteSpace: 'nowrap',
+					wordWrap: 'normal',
 					opacity: 0,
 					animation: `${fadeIn} calc(0.1s) ease-out calc(0.3s) 1 forwards`,
 				},

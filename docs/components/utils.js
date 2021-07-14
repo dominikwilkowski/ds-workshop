@@ -149,13 +149,14 @@ export const mdxComponents = {
 		);
 	},
 	inlineCode: InlineCode,
-	code: function Code({ children, initialCompiledResult }) {
+	code: function Code({ children, initialCompiledResult, live, className }) {
 		return (
 			<CodeBlock
 				code={children.trim()}
 				initialCompiledResult={initialCompiledResult}
 				scope={{ ...packages, React: { ...React, createElement: jsx } }}
-				live
+				live={live}
+				className={className}
 			/>
 		);
 	},

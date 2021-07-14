@@ -23,9 +23,6 @@ export default function App({ Component, pageProps }) {
 						WebkitFontSmoothing: 'antialiased',
 						MozOsxFontSmoothing: 'grayscale',
 					},
-					'blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre': {
-						margin: 0,
-					},
 					a: {
 						textDecoration: 'none',
 						color: 'var(--link)',
