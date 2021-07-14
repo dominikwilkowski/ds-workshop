@@ -1,3 +1,5 @@
+import { Thinkmill } from './icons/Thinkmill';
+
 export function Footer(props) {
 	return (
 		<footer
@@ -8,7 +10,16 @@ export function Footer(props) {
 			}}
 			{...props}
 		>
-			(c) by Dom
+			<div
+				css={{
+					display: 'inline-grid',
+					gridTemplateColumns: 'max-content max-content max-content',
+					alignItems: 'center',
+					gap: '0.5rem',
+				}}
+			>
+				&copy; by <Thinkmill css={{ height: '2rem' }} /> and Dom
+			</div>
 		</footer>
 	);
 }

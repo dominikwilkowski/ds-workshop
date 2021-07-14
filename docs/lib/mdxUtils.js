@@ -1,3 +1,4 @@
+import { plugin } from '@untitled-docs/live-code/rehype';
 import { serialize } from 'next-mdx-remote/serialize';
 import { readdirSync, readFileSync } from 'fs';
 import { normalize } from 'path';
@@ -27,7 +28,7 @@ export async function getPkgBySlug(slug) {
 	const mdxSource = await serialize(content, {
 		mdxOptions: {
 			remarkPlugins: [],
-			rehypePlugins: [],
+			rehypePlugins: [plugin],
 		},
 		scope: data,
 	});
@@ -45,6 +46,7 @@ export async function getAllPkgs(filePath = PKG_PATH, limit) {
 	const files = await Promise.all(
 		slugs
 			.filter((file) => !file.name.startsWith('_') && !file.name.startsWith('.') && file.isDirectory())
+			.sort((file) => (file.name === 'core' ? -1 : 1))
 			.map((slug) => getPkgBySlug(slug.name))
 	);
 

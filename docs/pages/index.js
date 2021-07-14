@@ -10,8 +10,9 @@ export default function Homepage({ pkgs }) {
 				look="grad3"
 				css={{
 					display: 'inline-block',
+					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
-					fontSize: '3rem',
+					fontSize: '5.75rem',
 				}}
 			>
 				Home Page

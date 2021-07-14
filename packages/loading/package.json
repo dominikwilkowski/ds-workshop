@@ -1,0 +1,19 @@
+{
+	"name": "@ds-workshop/loading",
+	"version": "1.0.0",
+	"scripts": {},
+	"main": "dist/ds-workshop-loading.cjs.js",
+	"module": "dist/ds-workshop-loading.esm.js",
+	"dependencies": {
+		"@babel/runtime": "^7.14.6",
+		"@ds-workshop/core": "^1.0.0"
+	},
+	"peerDependencies": {
+		"react": "^17.0.2"
+	},
+	"devDependencies": {
+		"react": "^17.0.2"
+	},
+	"license": "GPL-3.0",
+	"repository": "https://github.com/dominikwilkowski/ds-workshop/tree/main/packages/loading"
+}

@@ -27,6 +27,9 @@ function List(props) {
 				'& li': {
 					margin: '0.5rem 0',
 				},
+				'& li:first-of-type': {
+					marginTop: 0,
+				},
 			}}
 			{...props}
 		/>
@@ -41,12 +44,25 @@ export function Navigation({ pkgs, ...props }) {
 			}}
 			{...props}
 		>
-			<List>
+			<List
+				css={{
+					position: 'sticky',
+					top: '1rem',
+					overflow: 'auto',
+				}}
+			>
 				<li>
 					<LinkItem path="/" name="Home" />
 				</li>
 				<li>
-					<h2>Packages</h2>
+					<h2
+						css={{
+							fontSize: '1rem',
+							margin: '1rem 0 0.5rem 0',
+						}}
+					>
+						Packages
+					</h2>
 					<List>
 						{pkgs.map(({ slug, name }) => (
 							<li key={slug}>

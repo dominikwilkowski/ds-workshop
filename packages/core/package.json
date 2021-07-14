@@ -15,5 +15,5 @@
 		"react": "^17.0.2"
 	},
 	"license": "GPL-3.0",
-	"repository": "https://github.com/dominikwilkowski/ds-workshop/tree/master/packages/core"
+	"repository": "https://github.com/dominikwilkowski/ds-workshop/tree/main/packages/core"
 }

@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 export function Layout({ pkgs, children }) {
 	return (
 		<Fragment>
-			<main
+			<div
 				css={{
 					gridArea: 'main',
 					paddingBottom: 'var(--space-xxlarge)',
@@ -15,8 +15,14 @@ export function Layout({ pkgs, children }) {
 				}}
 			>
 				<Navigation pkgs={pkgs} />
-				<div>{children}</div>
-			</main>
+				<div
+					css={{
+						margin: '0 1rem',
+					}}
+				>
+					{children}
+				</div>
+			</div>
 			<Footer />
 		</Fragment>
 	);

@@ -2,16 +2,26 @@ import { MDXRemote } from 'next-mdx-remote';
 
 import { getAllPkgs, getPkgBySlug } from '../../lib/mdxUtils';
 import { mdxComponents } from '../../components/utils';
+import { Highlight } from '../../components/Highlight';
 import { Layout } from '../../components/Layout';
 
 export default function Packages({ pkgs, source, data }) {
 	return (
 		<Layout pkgs={pkgs}>
-			<div className="post-header">
-				<h1>{data.title}</h1>
-				{data.description && <p className="description">{data.description}</p>}
-			</div>
 			<main>
+				<Highlight
+					as="h1"
+					look="grad3"
+					css={{
+						display: 'inline-block',
+						fontFamily: 'var(--font-brand)',
+						fontWeight: 900,
+						fontSize: '5.75rem',
+					}}
+				>
+					{data.title}
+				</Highlight>
+				{data.description && <p css={{ fontSize: '1.25rem', margin: '1rem 0' }}>{data.description}</p>}
 				<MDXRemote {...source} components={mdxComponents} />
 			</main>
 		</Layout>

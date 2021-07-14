@@ -6,14 +6,17 @@
 	"module": "dist/ds-workshop-button.esm.js",
 	"dependencies": {
 		"@babel/runtime": "^7.14.6",
-		"@emotion/react": "^11.4.0"
+		"@ds-workshop/core": "^1.0.0",
+		"@ds-workshop/loading": "^1.0.0"
 	},
 	"peerDependencies": {
+		"next": "^11.0.1",
 		"react": "^17.0.2"
 	},
 	"devDependencies": {
+		"next": "^11.0.1",
 		"react": "^17.0.2"
 	},
 	"license": "GPL-3.0",
-	"repository": "https://github.com/dominikwilkowski/ds-workshop/tree/master/packages/button"
+	"repository": "https://github.com/dominikwilkowski/ds-workshop/tree/main/packages/button"
 }

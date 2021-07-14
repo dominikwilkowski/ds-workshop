@@ -1,49 +1,9 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import createEmotionServer from '@emotion/server/create-instance';
-import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
-import { Fragment } from 'react';
 
 class MyDocument extends Document {
 	static async getInitialProps(ctx) {
-		const originalRenderPage = ctx.renderPage;
-		let data;
-
-		ctx.renderPage = async () => {
-			const cache = createCache({ key: 'css' });
-			const { extractCriticalToChunks } = createEmotionServer(cache);
-			const result = await originalRenderPage({
-				enhanceApp: function enhance(App) {
-					return function cacher(props) {
-						return (
-							<CacheProvider value={cache}>
-								<App {...props} />
-							</CacheProvider>
-						);
-					};
-				},
-			});
-
-			data = extractCriticalToChunks(result.html);
-			return result;
-		};
-
 		const initialProps = await Document.getInitialProps(ctx);
-		return {
-			...initialProps,
-			styles: (
-				<Fragment>
-					{initialProps.styles}
-					{data.styles.map((data, i) => (
-						<style
-							key={i}
-							data-emotion={`${data.key} ${data.ids.join(' ')}`}
-							dangerouslySetInnerHTML={{ __html: data.css }}
-						/>
-					))}
-				</Fragment>
-			),
-		};
+		return { ...initialProps };
 	}
 
 	render() {
@@ -80,12 +40,7 @@ class MyDocument extends Document {
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
 				</Head>
-				<body
-					css={{
-						WebkitFontSmoothing: 'antialiased',
-						MozOsxFontSmoothing: 'grayscale',
-					}}
-				>
+				<body>
 					<Main />
 					<NextScript />
 				</body>
