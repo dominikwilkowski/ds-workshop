@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
 import * as icons from '@ds-workshop/icons';
+import { COLORS } from '@ds-workshop/core';
 import { Type } from '@ds-workshop/type';
 import { CodeBlock } from './CodeBlock';
 import { Highlight } from './Highlight';
@@ -137,9 +138,78 @@ function IconPallet() {
 	);
 }
 
+function Swatch({ name, color, gradient }) {
+	return (
+		<div css={{ textAlign: 'center' }}>
+			<div
+				css={{
+					display: 'inline-block',
+					width: '4rem',
+					height: '4rem',
+					margin: '0 auto',
+					border: '3px solid #fff',
+					borderRadius: '100%',
+					boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.1)',
+					background: gradient ? `linear-gradient(135deg, ${gradient.grad1} 4.86%, ${gradient.grad2} 97.92%)` : color,
+				}}
+			/>
+			<span
+				css={{
+					display: 'block',
+					padding: '0 0 1rem 0',
+				}}
+			>
+				<InlineCode>{name}</InlineCode>
+			</span>
+		</div>
+	);
+}
+
+function ColorTheme({ theme = 'light' }) {
+	let firstGrad;
+
+	return (
+		<div>
+			<div
+				css={{
+					display: 'grid',
+					gridTemplateColumns: 'repeat(auto-fit, minmax(8.75rem, 1fr))',
+					gap: '0.5rem',
+					background: COLORS[theme]['--app-bg'],
+					padding: '2rem 0',
+				}}
+			>
+				{Object.entries(COLORS[theme])
+					.filter(([name]) => name !== '--theme')
+					.filter(([name]) => !name.startsWith('--grad'))
+					.map(([name, color]) => (
+						<Swatch key={`light-${name}`} name={name} color={color} />
+					))}
+
+				{Object.entries(COLORS[theme])
+					.filter(([name]) => name.startsWith('--grad'))
+					.map(([name, color]) => {
+						if (name.endsWith('-2')) {
+							return (
+								<Swatch
+									key={`light-grad-${name}`}
+									name={name.split('-')[2]}
+									gradient={{ grad1: firstGrad, grad2: color }}
+								/>
+							);
+						} else {
+							firstGrad = color;
+						}
+					})}
+			</div>
+		</div>
+	);
+}
+
 const packages = {
 	Button: dynamic(() => import('@ds-workshop/button').then((mod) => mod.Button)),
 	Core: dynamic(() => import('@ds-workshop/core').then((mod) => mod.Core)),
+	DarkModeBtn: dynamic(() => import('@ds-workshop/core').then((mod) => mod.DarkModeBtn)),
 	Emoji: dynamic(() => import('@ds-workshop/emoji').then((mod) => mod.Emoji)),
 	Loading: dynamic(() => import('@ds-workshop/loading').then((mod) => mod.Loading)),
 	Stack: dynamic(() => import('@ds-workshop/stack').then((mod) => mod.Stack)),
@@ -264,5 +334,6 @@ export const mdxComponents = {
 		);
 	},
 	IconPallet: IconPallet,
+	ColorTheme: ColorTheme,
 	...packages,
 };

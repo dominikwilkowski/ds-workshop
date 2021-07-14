@@ -42,9 +42,7 @@ export function DarkModeBtn(props) {
 		<Fragment>
 			<Global
 				styles={{
-					':root': {
-						...COLORS[theme],
-					},
+					':root': COLORS[theme],
 				}}
 			/>
 			<button
