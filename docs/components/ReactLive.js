@@ -5,7 +5,7 @@ import copy from 'clipboard-copy';
 
 import { CodeHighlight } from './CodeHighlight';
 import { Button } from '@ds-workshop/button';
-import { Copy } from './icons/Copy';
+import { Copy } from '@ds-workshop/icons';
 
 function useCodeStyles() {
 	return {

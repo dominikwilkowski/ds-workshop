@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
 
-export function Layout({ pkgs, children }) {
+export function Layout({ pkgs, noNav, children, ...props }) {
 	return (
 		<Fragment>
 			<div
@@ -13,8 +13,9 @@ export function Layout({ pkgs, children }) {
 					display: 'grid',
 					gridTemplateColumns: '18.75rem auto',
 				}}
+				{...props}
 			>
-				<Navigation pkgs={pkgs} />
+				{!noNav && <Navigation pkgs={pkgs} />}
 				<div
 					css={{
 						margin: '0 1rem',

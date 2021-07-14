@@ -1,4 +1,4 @@
-import { Thinkmill } from './icons/Thinkmill';
+import { Thinkmill } from '@ds-workshop/icons';
 
 export function Footer(props) {
 	return (

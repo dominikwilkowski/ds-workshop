@@ -32,6 +32,7 @@ export function Highlight({ look = 'grad1', as: Tag = 'span', ...props }) {
 				// Fixes the "gradient text gets clipped when wrapping across lines" bug in Safari
 				// Thanks to https://forum.webflow.com/t/multi-line-gradient-text-safari-ios-fix-i-e-prevent-disappearing-text/135029
 				WebkitBoxDecorationBreak: 'clone',
+				paddingRight: '0.1em',
 			}}
 			{...props}
 		/>

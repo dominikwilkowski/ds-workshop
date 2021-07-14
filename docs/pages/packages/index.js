@@ -1,20 +1,17 @@
-import Link from 'next/link';
-
-import { getAllPkgs } from '../../lib/mdxUtils';
+import { Highlight } from '../../components/Highlight';
 import { Layout } from '../../components/Layout';
+import { getAllPkgs } from '../../lib/mdxUtils';
+import { Type } from '@ds-workshop/type';
 
 export default function PackagesHome({ pkgs }) {
 	return (
 		<Layout pkgs={pkgs}>
-			<ul>
-				{pkgs.map(({ slug, name }) => (
-					<li key={slug}>
-						<Link href={`/packages/${slug}`}>
-							<a>{name}</a>
-						</Link>
-					</li>
-				))}
-			</ul>
+			<Type as="h1" look="heading84" css={{ margin: '0 0 1rem 0' }}>
+				<Highlight look="grad3">Packages</Highlight>
+			</Type>
+			<Type as="p" look="body24bold" css={{ marginBottom: '3rem' }}>
+				Choose from the packages in the left sidebar to see their documentation
+			</Type>
 		</Layout>
 	);
 }

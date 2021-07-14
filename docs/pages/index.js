@@ -9,6 +9,9 @@ export default function Homepage({ pkgs }) {
 			<Type as="h1" look="heading84" css={{ margin: '0 0 1rem 0' }}>
 				<Highlight look="grad3">Home</Highlight>
 			</Type>
+			<Type as="p" look="body24bold" css={{ marginBottom: '3rem' }}>
+				Welcome to our Design System
+			</Type>
 		</Layout>
 	);
 }
