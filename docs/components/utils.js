@@ -29,7 +29,7 @@ function InlineCode(props) {
 				display: 'inline-block',
 				color: 'var(--code)',
 				background: 'var(--code-bg)',
-				padding: '0.0125rem 0.5rem',
+				padding: '0.025rem 0.25rem',
 				margin: 0,
 				border: '1px solid var(--border)',
 				borderRadius: '5px',
