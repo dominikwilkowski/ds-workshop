@@ -10,10 +10,12 @@
 		"@ds-workshop/loading": "^1.0.0"
 	},
 	"peerDependencies": {
+		"@emotion/react": "^11.4.0",
 		"next": "^11.0.1",
 		"react": "^17.0.2"
 	},
 	"devDependencies": {
+		"@emotion/react": "^11.4.0",
 		"next": "^11.0.1",
 		"react": "^17.0.2"
 	},

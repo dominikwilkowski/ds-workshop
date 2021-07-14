@@ -1,0 +1,4 @@
+{
+	"main": "dist/ds-workshop-icons-Twitter.cjs.js",
+	"module": "dist/ds-workshop-icons-Twitter.esm.js"
+}

@@ -9,9 +9,11 @@
 		"@ds-workshop/core": "^1.0.0"
 	},
 	"peerDependencies": {
+		"@emotion/react": "^11.4.0",
 		"react": "^17.0.2"
 	},
 	"devDependencies": {
+		"@emotion/react": "^11.4.0",
 		"react": "^17.0.2"
 	},
 	"license": "GPL-3.0",

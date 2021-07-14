@@ -1,0 +1,4 @@
+{
+	"main": "dist/ds-workshop-icons-Migration.cjs.js",
+	"module": "dist/ds-workshop-icons-Migration.esm.js"
+}

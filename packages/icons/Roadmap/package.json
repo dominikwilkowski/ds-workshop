@@ -1,0 +1,4 @@
+{
+	"main": "dist/ds-workshop-icons-Roadmap.cjs.js",
+	"module": "dist/ds-workshop-icons-Roadmap.esm.js"
+}

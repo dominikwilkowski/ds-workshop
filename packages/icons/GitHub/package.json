@@ -1,0 +1,4 @@
+{
+	"main": "dist/ds-workshop-icons-GitHub.cjs.js",
+	"module": "dist/ds-workshop-icons-GitHub.esm.js"
+}

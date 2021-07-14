@@ -43,7 +43,7 @@ export function Navigation({ pkgs, ...props }) {
 		<nav
 			css={{
 				position: 'relative',
-				padding: '1rem',
+				margin: '1rem',
 			}}
 			{...props}
 		>

@@ -19,6 +19,7 @@ export default function App({ Component, pageProps }) {
 						fontFamily: 'var(--font-body)',
 						padding: 0,
 						margin: 0,
+						textRendering: 'geometricPrecision',
 						WebkitTextSizeAdjust: 'none',
 						WebkitFontSmoothing: 'antialiased',
 						MozOsxFontSmoothing: 'grayscale',
@@ -27,11 +28,26 @@ export default function App({ Component, pageProps }) {
 						textDecoration: 'none',
 						color: 'var(--link)',
 					},
+					'::selection': {
+						textShadow: 'none',
+						color: '#fff',
+						backgroundColor: 'rgba(0, 0, 255, 0.1)',
+					},
 					pre: {
 						lineHeight: 1.4,
-						fontSize: '16px',
 					},
-					':focus:not(.focus-visible)': {
+					img: {
+						height: 'auto',
+						maxWidth: '100%',
+					},
+					button: {
+						color: 'inherit',
+					},
+					'a, button': {
+						/* Anchors and buttons don't want double-tap on mobile to zoom */
+						touchAction: 'manipulation',
+					},
+					':focus:not(:focus-visible)': {
 						outline: 'none',
 					},
 					'*:focus-visible, input:focus-visible, button:focus-visible, [type="submit"]:focus-visible': {

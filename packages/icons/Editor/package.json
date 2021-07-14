@@ -1,0 +1,4 @@
+{
+	"main": "dist/ds-workshop-icons-Editor.cjs.js",
+	"module": "dist/ds-workshop-icons-Editor.esm.js"
+}
