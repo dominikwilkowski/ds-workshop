@@ -9,6 +9,19 @@ import { Type } from '@ds-workshop/type';
 import { CodeBlock } from './CodeBlock';
 import { Highlight } from './Highlight';
 
+function Box() {
+	return (
+		<div
+			css={{
+				background: 'var(--text)',
+				height: '2rem',
+				width: '2rem',
+				borderRadius: '3px',
+			}}
+		/>
+	);
+}
+
 function NextLink({ href, children, ...props }) {
 	if (href.startsWith('http')) {
 		return (
@@ -169,45 +182,44 @@ function ColorTheme({ theme = 'light' }) {
 	let firstGrad;
 
 	return (
-		<div>
-			<div
-				css={{
-					display: 'grid',
-					gridTemplateColumns: 'repeat(auto-fit, minmax(8.75rem, 1fr))',
-					gap: '0.5rem',
-					background: COLORS[theme]['--app-bg'],
-					padding: '2rem 0',
-				}}
-			>
-				{Object.entries(COLORS[theme])
-					.filter(([name]) => name !== '--theme')
-					.filter(([name]) => !name.startsWith('--grad'))
-					.map(([name, color]) => (
-						<Swatch key={`light-${name}`} name={name} color={color} />
-					))}
+		<div
+			css={{
+				display: 'grid',
+				gridTemplateColumns: 'repeat(auto-fit, minmax(8.75rem, 1fr))',
+				gap: '0.5rem',
+				background: COLORS[theme]['--app-bg'],
+				padding: '2rem 0',
+			}}
+		>
+			{Object.entries(COLORS[theme])
+				.filter(([name]) => name !== '--theme')
+				.filter(([name]) => !name.startsWith('--grad'))
+				.map(([name, color]) => (
+					<Swatch key={`light-${name}`} name={name} color={color} />
+				))}
 
-				{Object.entries(COLORS[theme])
-					.filter(([name]) => name.startsWith('--grad'))
-					.map(([name, color]) => {
-						if (name.endsWith('-2')) {
-							return (
-								<Swatch
-									key={`light-grad-${name}`}
-									name={name.split('-')[2]}
-									gradient={{ grad1: firstGrad, grad2: color }}
-								/>
-							);
-						} else {
-							firstGrad = color;
-						}
-					})}
-			</div>
+			{Object.entries(COLORS[theme])
+				.filter(([name]) => name.startsWith('--grad'))
+				.map(([name, color]) => {
+					if (name.endsWith('-2')) {
+						return (
+							<Swatch
+								key={`light-grad-${name}`}
+								name={name.split('-')[2]}
+								gradient={{ grad1: firstGrad, grad2: color }}
+							/>
+						);
+					} else {
+						firstGrad = color;
+					}
+				})}
 		</div>
 	);
 }
 
 const packages = {
 	Button: dynamic(() => import('@ds-workshop/button').then((mod) => mod.Button)),
+	Box: Box,
 	Core: dynamic(() => import('@ds-workshop/core').then((mod) => mod.Core)),
 	DarkModeBtn: dynamic(() => import('@ds-workshop/core').then((mod) => mod.DarkModeBtn)),
 	Emoji: dynamic(() => import('@ds-workshop/emoji').then((mod) => mod.Emoji)),
