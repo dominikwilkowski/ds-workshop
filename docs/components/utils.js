@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
 import * as icons from '@ds-workshop/icons';
+import { Type } from '@ds-workshop/type';
 import { CodeBlock } from './CodeBlock';
 import { Highlight } from './Highlight';
 
@@ -21,6 +22,10 @@ function NextLink({ href, children, ...props }) {
 			<a {...props}>{children}</a>
 		</Link>
 	);
+}
+
+function NewType(props) {
+	return <Type as="p" look="body18" {...props} />;
 }
 
 function InlineCode(props) {
@@ -98,8 +103,10 @@ function IconPallet() {
 					display: 'grid',
 					gridTemplateColumns: 'repeat(auto-fill, minmax(6.75rem, 1fr))',
 					gap: '1.5rem',
-					padding: 0,
+					padding: '1rem 0',
 					margin: 0,
+					borderTop: '2px dashed var(--border)',
+					borderBottom: '2px dashed var(--border)',
 				}}
 			>
 				{Object.keys(icons).map((icon) => {
@@ -110,14 +117,14 @@ function IconPallet() {
 								css={{
 									display: 'grid',
 									gridTemplateRows: 'auto max-content',
-									minHeight: '3.5rem',
+									minHeight: '4.5rem',
 									justifyItems: 'center',
 								}}
 							>
 								<Icon
 									look={look}
 									css={{
-										width: '2rem',
+										width: '3rem',
 									}}
 								/>
 								<InlineCode>{icon}</InlineCode>
@@ -136,11 +143,18 @@ const packages = {
 	Emoji: dynamic(() => import('@ds-workshop/emoji').then((mod) => mod.Emoji)),
 	Loading: dynamic(() => import('@ds-workshop/loading').then((mod) => mod.Loading)),
 	Stack: dynamic(() => import('@ds-workshop/stack').then((mod) => mod.Stack)),
-	Type: dynamic(() => import('@ds-workshop/type').then((mod) => mod.Type)),
+	Type: Type,
+
+	Cli: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Cli)),
+	Copy: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Copy)),
+	Lab: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Lab)),
+	Roadmap: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Roadmap)),
+	Shield: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Shield)),
 };
 
 export const mdxComponents = {
 	a: NextLink,
+	p: NewType,
 	h1: function H1(props) {
 		return (
 			<Highlight
@@ -151,7 +165,7 @@ export const mdxComponents = {
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
 					fontSize: '4rem',
-					marginTop: '1rem',
+					marginBottom: '0.5rem',
 				}}
 				{...props}
 			/>
@@ -167,7 +181,7 @@ export const mdxComponents = {
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
 					fontSize: '3rem',
-					marginTop: '1rem',
+					marginBottom: '0.5rem',
 				}}
 				{...props}
 			/>
@@ -183,7 +197,7 @@ export const mdxComponents = {
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
 					fontSize: '2.25rem',
-					marginTop: '1rem',
+					marginBottom: '0.5rem',
 				}}
 				{...props}
 			/>
@@ -199,7 +213,7 @@ export const mdxComponents = {
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
 					fontSize: '1.875rem',
-					marginTop: '1rem',
+					marginBottom: '0.5rem',
 				}}
 				{...props}
 			/>
@@ -215,7 +229,7 @@ export const mdxComponents = {
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
 					fontSize: '1.5rem',
-					marginTop: '1rem',
+					marginBottom: '0.5rem',
 				}}
 				{...props}
 			/>
@@ -231,7 +245,7 @@ export const mdxComponents = {
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
 					fontSize: '1rem',
-					marginTop: '1rem',
+					marginBottom: '0.5rem',
 				}}
 				{...props}
 			/>

@@ -1,23 +1,14 @@
 import { Highlight } from '../components/Highlight';
 import { Layout } from '../components/Layout';
 import { getAllPkgs } from '../lib/mdxUtils';
+import { Type } from '@ds-workshop/type';
 
 export default function Homepage({ pkgs }) {
 	return (
 		<Layout pkgs={pkgs}>
-			<Highlight
-				as="h1"
-				look="grad3"
-				css={{
-					display: 'inline-block',
-					fontFamily: 'var(--font-brand)',
-					fontWeight: 900,
-					fontSize: '5.75rem',
-					marginTop: 0,
-				}}
-			>
-				Home Page
-			</Highlight>
+			<Type as="h1" look="heading84" css={{ margin: '0 0 1rem 0' }}>
+				<Highlight look="grad3">Home</Highlight>
+			</Type>
 		</Layout>
 	);
 }

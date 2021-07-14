@@ -4,26 +4,19 @@ import { getAllPkgs, getPkgBySlug } from '../../lib/mdxUtils';
 import { mdxComponents } from '../../components/utils';
 import { Highlight } from '../../components/Highlight';
 import { Layout } from '../../components/Layout';
+import { Type } from '@ds-workshop/type';
 
 export default function Packages({ pkgs, source, data }) {
 	return (
 		<Layout pkgs={pkgs}>
 			<main>
-				<Highlight
-					as="h1"
-					look="grad3"
-					css={{
-						display: 'inline-block',
-						fontFamily: 'var(--font-brand)',
-						fontWeight: 900,
-						fontSize: '5.75rem',
-						margin: '0 0 1rem 0',
-					}}
-				>
-					{data.title}
-				</Highlight>
+				<Type as="h1" look="heading84" css={{ margin: '0 0 1rem 0' }}>
+					<Highlight look="grad3">{data.title}</Highlight>
+				</Type>
 				{data.description && (
-					<p css={{ fontSize: '1.5rem', margin: '1rem 0', marginBottom: '3rem' }}>{data.description}</p>
+					<Type as="p" look="body24bold" css={{ marginBottom: '3rem' }}>
+						{data.description}
+					</Type>
 				)}
 				<MDXRemote {...source} components={mdxComponents} />
 			</main>
