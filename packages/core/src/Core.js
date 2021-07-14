@@ -1,8 +1,15 @@
-export function Core(props) {
-	return <div {...props} />;
-}
+import { Global } from '@emotion/react';
+import { Fragment } from 'react';
 
-// TODO:
-// - add tokens
-// - add reset
-// - add helpers
+import { reset } from './reset';
+import { Theme } from './Theme';
+
+export function Core({ children }) {
+	return (
+		<Fragment>
+			<Global styles={reset} />
+			<Theme />
+			{children}
+		</Fragment>
+	);
+}

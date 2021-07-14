@@ -1,6 +1,4 @@
-import { Gradients } from './util';
-
-export function LightMode({ grad, ...props }) {
+export function LightMode(props) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -8,10 +6,9 @@ export function LightMode({ grad, ...props }) {
 			aria-label="Light Mode"
 			role="img"
 			fill="none"
-			stroke={grad ? `url(#LightMode-${grad})` : 'currentColor'}
+			stroke="currentColor"
 			{...props}
 		>
-			<Gradients name="LightMode" />
 			<path
 				strokeLinecap="round"
 				strokeLinejoin="round"

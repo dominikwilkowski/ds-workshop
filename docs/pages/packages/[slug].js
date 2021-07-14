@@ -17,11 +17,14 @@ export default function Packages({ pkgs, source, data }) {
 						fontFamily: 'var(--font-brand)',
 						fontWeight: 900,
 						fontSize: '5.75rem',
+						margin: '0 0 1rem 0',
 					}}
 				>
 					{data.title}
 				</Highlight>
-				{data.description && <p css={{ fontSize: '1.25rem', margin: '1rem 0' }}>{data.description}</p>}
+				{data.description && (
+					<p css={{ fontSize: '1.5rem', margin: '1rem 0', marginBottom: '3rem' }}>{data.description}</p>
+				)}
 				<MDXRemote {...source} components={mdxComponents} />
 			</main>
 		</Layout>

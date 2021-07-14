@@ -12,7 +12,7 @@ export function Stack({ gap = 4, orientation = 'vertical', ...props }) {
 	return (
 		<div
 			css={{
-				display: 'inline-grid',
+				display: 'grid',
 				mozBoxAlign: 'stretch',
 				placeItems: 'stretch',
 				gap: gapMap[gap],

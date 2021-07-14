@@ -1,6 +1,97 @@
 ---
-title: The stack package
-description: This is what the stack is meant to do and why we have it
+title: The type package
+description: This is what the type is meant to do and why we have it
 ---
 
-TODO
+The `Type` package encapsulates all of our typography styles and keeps it in a single place.
+
+## Body font packs
+
+```jsx live
+<Stack>
+	<Type look="body12" as="p">
+		Type as body12
+	</Type>
+	<Type look="body12bold" as="p">
+		Type as body12bold
+	</Type>
+	<Type look="body14" as="p">
+		Type as body14
+	</Type>
+	<Type look="body14bold" as="p">
+		Type as body14bold
+	</Type>
+	<Type look="body16" as="p">
+		Type as body16
+	</Type>
+	<Type look="body16bold" as="p">
+		Type as body16bold
+	</Type>
+	<Type look="body18" as="p">
+		Type as body18
+	</Type>
+	<Type look="body18bold" as="p">
+		Type as body18bold
+	</Type>
+	<Type look="body20" as="p">
+		Type as body20
+	</Type>
+	<Type look="body20bold" as="p">
+		Type as body20bold
+	</Type>
+	<Type look="body24" as="p">
+		Type as body24
+	</Type>
+	<Type look="body24bold" as="p">
+		Type as body24bold
+	</Type>
+</Stack>
+```
+
+## Heading font packs
+
+```jsx live
+<Stack>
+	<Type look="heading20" as="p">
+		Type as heading20
+	</Type>
+	<Type look="heading20bold" as="p">
+		Type as heading20bold
+	</Type>
+	<Type look="heading24" as="p">
+		Type as heading24
+	</Type>
+	<Type look="heading30" as="p">
+		Type as heading30
+	</Type>
+	<Type look="heading36" as="p">
+		Type as heading36
+	</Type>
+	<Type look="heading48" as="p">
+		Type as heading48
+	</Type>
+	<Type look="heading64" as="p">
+		Type as heading64
+	</Type>
+	<Type look="heading84" as="p">
+		Type as heading84
+	</Type>
+	<Type look="heading92" as="p">
+		Type as heading92
+	</Type>
+</Stack>
+```
+
+## Chose the tag to render
+
+```jsx live
+<Stack>
+	<Type look="heading30">Render as span</Type>
+	<Type look="heading30" as="p">
+		Render as paragraph
+	</Type>
+	<Type look="heading30" as="div">
+		Render as div
+	</Type>
+</Stack>
+```

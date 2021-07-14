@@ -47,6 +47,7 @@ const packages = {
 	Stack: dynamic(() => import('@ds-workshop/stack').then((mod) => mod.Stack)),
 	Loading: dynamic(() => import('@ds-workshop/loading').then((mod) => mod.Loading)),
 	Emoji: dynamic(() => import('@ds-workshop/emoji').then((mod) => mod.Emoji)),
+	Type: dynamic(() => import('@ds-workshop/type').then((mod) => mod.Type)),
 };
 
 export const mdxComponents = {

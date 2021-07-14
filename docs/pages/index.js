@@ -13,6 +13,7 @@ export default function Homepage({ pkgs }) {
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
 					fontSize: '5.75rem',
+					marginTop: 0,
 				}}
 			>
 				Home Page

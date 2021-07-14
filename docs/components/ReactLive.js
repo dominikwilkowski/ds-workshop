@@ -101,6 +101,8 @@ export const ReactLive = ({ code, demo, scope, initialCompiledResult }) => {
 				borderRadius: '3px',
 				boxShadow: '0 0 0 1px var(--border)',
 				margin: '1rem 0',
+				whiteSpace: 'break-spaces',
+				wordWrap: 'anywhere',
 			}}
 		>
 			<div>
