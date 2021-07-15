@@ -164,7 +164,6 @@ export const ReactLive = ({ code, demo, scope, initialCompiledResult }) => {
 
 								':hover, &.focus-visible': {
 									background: 'red',
-									// color: palette.text.muted,
 								},
 
 								':before':

@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }) {
 					},
 					'::selection': {
 						textShadow: 'none',
-						color: '#fff',
+						color: '#000',
 						backgroundColor: 'rgba(0, 0, 255, 0.1)',
 					},
 					pre: {

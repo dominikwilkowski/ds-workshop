@@ -1,12 +1,14 @@
-import { Thinkmill } from '@ds-workshop/icons';
+import { Thinkmill } from '@ds-workshop/icons/Thinkmill';
 
 export function Footer(props) {
 	return (
 		<footer
 			css={{
 				gridArea: 'footer',
-				padding: '1rem 0',
 				textAlign: 'center',
+				background: 'var(--code-bg)',
+				padding: 'var(--space-xlarge) 0',
+				borderTop: '2px dashed var(--border)',
 			}}
 			{...props}
 		>
