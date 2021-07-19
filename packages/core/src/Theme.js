@@ -71,5 +71,5 @@ export function Theme() {
 		}
 	});
 
-	return <SetTheme setBase theme={getEntireTheme()} />;
+	return <SetTheme setBase theme={getEntireTheme(theme)} />;
 }
