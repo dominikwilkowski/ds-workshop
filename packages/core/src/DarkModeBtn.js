@@ -1,8 +1,8 @@
 import { Fragment, useState, useEffect } from 'react';
-import { Global } from '@emotion/react';
 
 import { LightMode } from './LightMode';
 import { DarkMode } from './DarkMode';
+import { SetTheme } from './Theme';
 import { COLORS } from './tokens';
 
 export function DarkModeBtn(props) {
@@ -40,11 +40,7 @@ export function DarkModeBtn(props) {
 
 	return (
 		<Fragment>
-			<Global
-				styles={{
-					':root': COLORS[theme],
-				}}
-			/>
+			<SetTheme theme={COLORS[theme]} />
 			<button
 				onClick={handleThemeChange}
 				css={{
