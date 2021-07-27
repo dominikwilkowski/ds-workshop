@@ -19,8 +19,8 @@ export function slugify(string) {
 }
 
 export async function getPkgBySlug(slug) {
-	const realSlug = slugify(slug).replace(/\.mdx$/, '');
-	const fileContents = readFileSync(normalize(`${PKG_PATH}/${realSlug}/docs.mdx`), 'utf8');
+	const realSlug = slugify(slug).replace(/\.md$/, '');
+	const fileContents = readFileSync(normalize(`${PKG_PATH}/${realSlug}/README.md`), 'utf8');
 	const pkgContents = JSON.parse(readFileSync(normalize(`${PKG_PATH}/${realSlug}/package.json`), 'utf8'));
 
 	const { data, content } = matter(fileContents);

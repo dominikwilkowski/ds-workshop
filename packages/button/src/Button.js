@@ -35,6 +35,7 @@ const styleMap = {
 		'--button-bg-hover': 'transparent',
 		'--button-bg-active': 'transparent',
 		'--button-color': 'var(--link)',
+		'--button-color-hover': 'var(--link)',
 		'--button-color-disabled': 'var(--disabled)',
 		'--button-decoration-hover': 'underline',
 		'--button-bg-disabled': 'transparent',
@@ -110,10 +111,10 @@ export const Button = forwardRef(
 						'--button-border-hover': 'var(--button-border)',
 						'--button-border-active': 'var(--button-border)',
 						'--button-border-disabled': 'var(--button-border)',
-						'--button-color': 'var(--button-text)',
-						'--button-color-hover': 'var(--button-color)',
-						'--button-color-active': 'var(--button-color)',
-						'--button-color-disabled': 'var(--button-color)',
+						'--button-color': 'var(--app-bg)',
+						'--button-color-hover': 'var(--app-bg)',
+						'--button-color-active': 'var(--app-bg)',
+						'--button-color-disabled': 'var(--app-bg)',
 						'--button-decoration-hover': 'none',
 						'--button-shadow': '0 0 4px 0 rgb(0 118 255 / 36%)',
 						'--button-shadow-hover': '0 0 4px 0 rgb(0 118 255 / 30%)',
@@ -186,6 +187,7 @@ export const Button = forwardRef(
 							gap: '0.5rem',
 							alignItems: 'center',
 							opacity: loading ? 0 : 1,
+							textDecoration: 'inherit',
 						}}
 					>
 						{children}
