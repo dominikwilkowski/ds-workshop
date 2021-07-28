@@ -16,9 +16,11 @@ export function ColorTheme({ theme = 'light' }) {
 				css={{
 					display: 'grid',
 					gridTemplateColumns: 'repeat(auto-fit, minmax(8.75rem, 1fr))',
-					gap: '0.5rem',
+					gap: '2rem 1rem',
 					background: COLORS[theme]['--app-bg'],
-					padding: '2rem 0 1rem 0',
+					padding: '1rem 0',
+					marginTop: '1rem',
+					borderRadius: '0.75rem',
 				}}
 			>
 				{Object.entries(COLORS[theme])
@@ -36,9 +38,11 @@ export function ColorTheme({ theme = 'light' }) {
 				css={{
 					display: 'grid',
 					gridTemplateColumns: 'repeat(auto-fit, minmax(8.75rem, 1fr))',
-					gap: '0.5rem',
+					gap: '2rem 1rem',
 					background: COLORS[theme]['--app-bg'],
-					padding: '2rem 0',
+					padding: '1rem 0',
+					marginTop: '1rem',
+					borderRadius: '0.75rem',
 				}}
 			>
 				{Object.entries(COLORS[theme])

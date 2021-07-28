@@ -2,16 +2,7 @@ import { jsx } from '@emotion/react';
 import dynamic from 'next/dynamic';
 import React from 'react';
 
-import { ColorTheme } from './docs/ColorTheme';
-import { IconPallet } from './docs/IconPallet';
-import { InlineCode } from './docs/InlineCode';
-import { Paragraph } from './docs/Paragraph';
-import { NextLink } from './docs/NextLink';
-import { ListItem } from './docs/ListItem';
-import { Type } from '@ds-workshop/type';
 import { CodeBlock } from './CodeBlock';
-import { Highlight } from './Highlight';
-import { Box } from './docs/Box';
 
 const packages = {
 	Button: dynamic(() => import('@ds-workshop/button').then((mod) => mod.Button)),
@@ -25,112 +16,25 @@ const packages = {
 	Lab: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Lab)),
 	Roadmap: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Roadmap)),
 	Shield: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Shield)),
+	Type: dynamic(() => import('@ds-workshop/type').then((mod) => mod.Type)),
 
-	Type: Type,
-	Box: Box,
+	Box: dynamic(() => import('./docs/Box').then((mod) => mod.Box)),
 };
 
 export const mdxComponents = {
-	a: NextLink,
-	p: Paragraph,
-	li: ListItem,
-	h1: function H1(props) {
-		return (
-			<Highlight
-				as="h1"
-				look="grad3"
-				css={{
-					display: 'inline-block',
-					fontFamily: 'var(--font-brand)',
-					fontWeight: 900,
-					fontSize: '4rem',
-					marginBottom: '0.5rem',
-				}}
-				{...props}
-			/>
-		);
-	},
-	h2: function H2(props) {
-		return (
-			<Highlight
-				as="h2"
-				look="grad3"
-				css={{
-					display: 'inline-block',
-					fontFamily: 'var(--font-brand)',
-					fontWeight: 900,
-					fontSize: '3rem',
-					marginBottom: '0.5rem',
-				}}
-				{...props}
-			/>
-		);
-	},
-	h3: function H3(props) {
-		return (
-			<Highlight
-				as="h3"
-				look="grad3"
-				css={{
-					display: 'inline-block',
-					fontFamily: 'var(--font-brand)',
-					fontWeight: 900,
-					fontSize: '2.25rem',
-					marginBottom: '0.5rem',
-				}}
-				{...props}
-			/>
-		);
-	},
-	h4: function H4(props) {
-		return (
-			<Highlight
-				as="h4"
-				look="grad3"
-				css={{
-					display: 'inline-block',
-					fontFamily: 'var(--font-brand)',
-					fontWeight: 900,
-					fontSize: '1.875rem',
-					marginBottom: '0.5rem',
-				}}
-				{...props}
-			/>
-		);
-	},
-	h5: function H5(props) {
-		return (
-			<Highlight
-				as="h5"
-				look="grad3"
-				css={{
-					display: 'inline-block',
-					fontFamily: 'var(--font-brand)',
-					fontWeight: 900,
-					fontSize: '1.5rem',
-					marginBottom: '0.5rem',
-				}}
-				{...props}
-			/>
-		);
-	},
-	h6: function H6(props) {
-		return (
-			<Highlight
-				as="h6"
-				look="grad3"
-				css={{
-					display: 'inline-block',
-					fontFamily: 'var(--font-brand)',
-					fontWeight: 900,
-					fontSize: '1rem',
-					marginBottom: '0.5rem',
-				}}
-				{...props}
-			/>
-		);
-	},
-	inlineCode: InlineCode,
+	a: dynamic(() => import('./docs/NextLink').then((mod) => mod.NextLink)),
+	p: dynamic(() => import('./docs/Paragraph').then((mod) => mod.Paragraph)),
+	blockquote: dynamic(() => import('./docs/Blockquote').then((mod) => mod.Blockquote)),
+	li: dynamic(() => import('./docs/ListItem').then((mod) => mod.ListItem)),
+	h1: dynamic(() => import('./docs/Headings').then((mod) => mod.H1)),
+	h2: dynamic(() => import('./docs/Headings').then((mod) => mod.H2)),
+	h3: dynamic(() => import('./docs/Headings').then((mod) => mod.H3)),
+	h4: dynamic(() => import('./docs/Headings').then((mod) => mod.H4)),
+	h5: dynamic(() => import('./docs/Headings').then((mod) => mod.H5)),
+	h6: dynamic(() => import('./docs/Headings').then((mod) => mod.H6)),
+	inlineCode: dynamic(() => import('./docs/InlineCode').then((mod) => mod.InlineCode)),
+	IconPallet: dynamic(() => import('./docs/IconPallet').then((mod) => mod.IconPallet)),
+	ColorTheme: dynamic(() => import('./docs/ColorTheme').then((mod) => mod.ColorTheme)),
 	code: function Code({ children, initialCompiledResult, live, className }) {
 		return (
 			<CodeBlock
@@ -142,7 +46,5 @@ export const mdxComponents = {
 			/>
 		);
 	},
-	IconPallet: IconPallet,
-	ColorTheme: ColorTheme,
 	...packages,
 };

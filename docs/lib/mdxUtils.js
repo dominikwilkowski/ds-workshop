@@ -20,8 +20,21 @@ export function slugify(string) {
 
 export async function getPkgBySlug(slug) {
 	const realSlug = slugify(slug).replace(/\.md$/, '');
-	const fileContents = readFileSync(normalize(`${PKG_PATH}/${realSlug}/README.md`), 'utf8');
+	const filePath = normalize(`${PKG_PATH}/${realSlug}/README.md`);
 	const pkgContents = JSON.parse(readFileSync(normalize(`${PKG_PATH}/${realSlug}/package.json`), 'utf8'));
+
+	const data = await getMarkdown(filePath);
+
+	return {
+		...data,
+		slug: realSlug,
+		name: pkgContents.name,
+		version: pkgContents.version,
+	};
+}
+
+export async function getMarkdown(filePath) {
+	const fileContents = readFileSync(filePath, 'utf8');
 
 	const { data, content } = matter(fileContents);
 
@@ -34,10 +47,8 @@ export async function getPkgBySlug(slug) {
 	});
 
 	return {
-		slug: realSlug,
 		source: mdxSource,
 		data,
-		name: pkgContents.name,
 	};
 }
 

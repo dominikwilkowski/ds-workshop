@@ -18,7 +18,6 @@ export function Swatch({ name, color, gradient }) {
 			<span
 				css={{
 					display: 'block',
-					padding: '0 0 1rem 0',
 				}}
 			>
 				<InlineCode>{name}</InlineCode>
