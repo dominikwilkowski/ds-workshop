@@ -16,6 +16,8 @@
 
 I have added a couple simple components. Just to hit some of the most common raised questions.
 
+TODO: Typescript
+
 https://emotion.sh
 
 ### Yarn workspaces
