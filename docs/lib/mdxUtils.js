@@ -1,6 +1,7 @@
 import { plugin } from '@untitled-docs/live-code/rehype';
 import { serialize } from 'next-mdx-remote/serialize';
 import { readdirSync, readFileSync } from 'fs';
+import remarkHint from 'remark-hint';
 import { normalize } from 'path';
 import matter from 'gray-matter';
 
@@ -40,7 +41,7 @@ export async function getMarkdown(filePath) {
 
 	const mdxSource = await serialize(content, {
 		mdxOptions: {
-			remarkPlugins: [],
+			remarkPlugins: [remarkHint],
 			rehypePlugins: [plugin],
 		},
 		scope: data,

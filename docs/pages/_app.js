@@ -66,6 +66,27 @@ export default function App({ Component, pageProps }) {
 						gridTemplateAreas: '"header" "main" "footer"',
 						gridTemplateColumns: 'minmax(0, 1fr)',
 					},
+					'.hint': {
+						borderRadius: '4px',
+						padding: '1rem 1rem 1rem 1.5rem',
+						color: 'var(--text-heading)',
+					},
+					'.hint.neutral': {
+						background: 'var(--code-bg)',
+						borderLeft: '6px solid var(--text)',
+					},
+					'.hint.tip': {
+						background: 'var(--info-bg)',
+						borderLeft: '6px solid var(--info)',
+					},
+					'.hint.warn': {
+						background: 'var(--warning-bg)',
+						borderLeft: '6px solid var(--warning)',
+					},
+					'.hint.error': {
+						background: 'var(--danger-bg)',
+						borderLeft: '6px solid var(--danger)',
+					},
 				}}
 			/>
 			<Head>
