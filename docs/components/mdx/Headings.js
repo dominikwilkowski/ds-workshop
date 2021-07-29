@@ -1,8 +1,46 @@
+import { slugify } from '../../lib/slugify';
+import { Link } from '@ds-workshop/icons';
 import { Highlight } from '../Highlight';
 
-export function H1(props) {
+function Helper({ link }) {
 	return (
-		<h1>
+		<a
+			data-helper
+			href={`#${link}`}
+			css={{
+				position: 'absolute',
+				top: '0',
+				bottom: '0',
+				left: '-2rem',
+				paddingRight: '0.5rem',
+				alignItems: 'center',
+				color: 'var(--link) !important',
+				border: 'none !important',
+			}}
+		>
+			<Link css={{ height: '1.75rem' }} />
+		</a>
+	);
+}
+
+const commonStyles = {
+	position: 'relative',
+	'& a': {
+		color: 'inherit',
+		borderBottom: '1px solid var(--link)',
+	},
+	'& [data-helper]': {
+		display: 'none',
+	},
+	'&:hover [data-helper]': {
+		display: 'flex',
+	},
+};
+
+export function H1({ children, ...props }) {
+	const slug = slugify(children.replace('[object Object]', ''));
+	return (
+		<h1 id={slug} css={commonStyles}>
 			<Highlight
 				look="grad3"
 				css={{
@@ -16,14 +54,18 @@ export function H1(props) {
 					},
 				}}
 				{...props}
-			/>
+			>
+				{children}
+			</Highlight>
+			<Helper link={slug} />
 		</h1>
 	);
 }
 
-export function H2(props) {
+export function H2({ children, ...props }) {
+	const slug = slugify(children.replace('[object Object]', ''));
 	return (
-		<h2>
+		<h2 id={slug} css={commonStyles}>
 			<Highlight
 				look="grad2"
 				css={{
@@ -37,14 +79,18 @@ export function H2(props) {
 					},
 				}}
 				{...props}
-			/>
+			>
+				{children}
+			</Highlight>
+			<Helper link={slug} />
 		</h2>
 	);
 }
 
-export function H3(props) {
+export function H3({ children, ...props }) {
+	const slug = slugify(children.replace('[object Object]', ''));
 	return (
-		<h3>
+		<h3 id={slug} css={commonStyles}>
 			<Highlight
 				look="grad4"
 				css={{
@@ -58,14 +104,18 @@ export function H3(props) {
 					},
 				}}
 				{...props}
-			/>
+			>
+				{children}
+			</Highlight>
+			<Helper link={slug} />
 		</h3>
 	);
 }
 
-export function H4(props) {
+export function H4({ children, ...props }) {
+	const slug = slugify(children.replace('[object Object]', ''));
 	return (
-		<h4>
+		<h4 id={slug} css={commonStyles}>
 			<Highlight
 				look="grad1"
 				css={{
@@ -79,14 +129,18 @@ export function H4(props) {
 					},
 				}}
 				{...props}
-			/>
+			>
+				{children}
+			</Highlight>
+			<Helper link={slug} />
 		</h4>
 	);
 }
 
-export function H5(props) {
+export function H5({ children, ...props }) {
+	const slug = slugify(children.replace('[object Object]', ''));
 	return (
-		<h5>
+		<h5 id={slug} css={commonStyles}>
 			<Highlight
 				look="grad5"
 				css={{
@@ -100,25 +154,30 @@ export function H5(props) {
 					},
 				}}
 				{...props}
-			/>
+			>
+				{children}
+			</Highlight>
+			<Helper link={slug} />
 		</h5>
 	);
 }
 
-export function H6(props) {
+export function H6({ children, ...props }) {
+	const slug = slugify(children.replace('[object Object]', ''));
 	return (
 		<h6
+			id={slug}
 			css={{
 				fontFamily: 'var(--font-brand)',
 				fontSize: '1.25rem',
 				fontWeight: 900,
 				marginBottom: '0.5rem',
-				'& a': {
-					color: 'inherit',
-					borderBottom: '1px solid var(--link)',
-				},
+				...commonStyles,
 			}}
 			{...props}
-		/>
+		>
+			{children}
+			<Helper link={slug} />
+		</h6>
 	);
 }

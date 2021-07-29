@@ -10,7 +10,6 @@
 - [preconstruct](#preconstruct)
 - [changesets](#changesets)
 - [Nextjs for the docs](#docs)
-- [MDX for documentation](#mdx-for-documentation)
 
 ### Components
 
