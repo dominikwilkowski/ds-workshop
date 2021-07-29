@@ -10,6 +10,9 @@ export function H1(props) {
 					fontWeight: 900,
 					fontSize: '4rem',
 					marginBottom: '0.5rem',
+					'& a': {
+						color: 'inherit',
+					},
 				}}
 				{...props}
 			/>
@@ -27,6 +30,9 @@ export function H2(props) {
 					fontWeight: 900,
 					fontSize: '3rem',
 					marginBottom: '0.5rem',
+					'& a': {
+						color: 'inherit',
+					},
 				}}
 				{...props}
 			/>
@@ -44,6 +50,9 @@ export function H3(props) {
 					fontWeight: 900,
 					fontSize: '2.25rem',
 					marginBottom: '0.5rem',
+					'& a': {
+						color: 'inherit',
+					},
 				}}
 				{...props}
 			/>
@@ -61,6 +70,9 @@ export function H4(props) {
 					fontWeight: 900,
 					fontSize: '1.875rem',
 					marginBottom: '0.5rem',
+					'& a': {
+						color: 'inherit',
+					},
 				}}
 				{...props}
 			/>
@@ -78,6 +90,9 @@ export function H5(props) {
 					fontWeight: 900,
 					fontSize: '1.5rem',
 					marginBottom: '0.5rem',
+					'& a': {
+						color: 'inherit',
+					},
 				}}
 				{...props}
 			/>
@@ -95,6 +110,9 @@ export function H6(props) {
 					fontWeight: 900,
 					fontSize: '1rem',
 					marginBottom: '0.5rem',
+					'& a': {
+						color: 'inherit',
+					},
 				}}
 				{...props}
 			/>
