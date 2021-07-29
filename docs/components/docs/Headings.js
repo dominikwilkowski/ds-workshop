@@ -12,6 +12,7 @@ export function H1(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
+						borderBottom: '1px solid var(--text)',
 					},
 				}}
 				{...props}
@@ -24,7 +25,7 @@ export function H2(props) {
 	return (
 		<h2>
 			<Highlight
-				look="grad3"
+				look="grad2"
 				css={{
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
@@ -32,6 +33,7 @@ export function H2(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
+						borderBottom: '1px solid var(--text)',
 					},
 				}}
 				{...props}
@@ -44,7 +46,7 @@ export function H3(props) {
 	return (
 		<h3>
 			<Highlight
-				look="grad3"
+				look="grad4"
 				css={{
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
@@ -52,6 +54,7 @@ export function H3(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
+						borderBottom: '1px solid var(--text)',
 					},
 				}}
 				{...props}
@@ -64,7 +67,7 @@ export function H4(props) {
 	return (
 		<h4>
 			<Highlight
-				look="grad3"
+				look="grad1"
 				css={{
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
@@ -72,6 +75,7 @@ export function H4(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
+						borderBottom: '1px solid var(--text)',
 					},
 				}}
 				{...props}
@@ -84,7 +88,7 @@ export function H5(props) {
 	return (
 		<h5>
 			<Highlight
-				look="grad3"
+				look="grad5"
 				css={{
 					fontFamily: 'var(--font-brand)',
 					fontWeight: 900,
@@ -92,6 +96,7 @@ export function H5(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
+						borderBottom: '1px solid var(--text)',
 					},
 				}}
 				{...props}
@@ -102,20 +107,18 @@ export function H5(props) {
 
 export function H6(props) {
 	return (
-		<h6>
-			<Highlight
-				look="grad3"
-				css={{
-					fontFamily: 'var(--font-brand)',
-					fontWeight: 900,
-					fontSize: '1rem',
-					marginBottom: '0.5rem',
-					'& a': {
-						color: 'inherit',
-					},
-				}}
-				{...props}
-			/>
-		</h6>
+		<h6
+			css={{
+				fontFamily: 'var(--font-brand)',
+				fontSize: '1.25rem',
+				fontWeight: 900,
+				marginBottom: '0.5rem',
+				'& a': {
+					color: 'inherit',
+					borderBottom: '1px solid var(--text)',
+				},
+			}}
+			{...props}
+		/>
 	);
 }
