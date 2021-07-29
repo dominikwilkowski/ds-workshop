@@ -18,23 +18,23 @@ const packages = {
 	Shield: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Shield)),
 	Type: dynamic(() => import('@ds-workshop/type').then((mod) => mod.Type)),
 
-	Box: dynamic(() => import('./docs/Box').then((mod) => mod.Box)),
+	Box: dynamic(() => import('./mdx/Box').then((mod) => mod.Box)),
 };
 
 export const mdxComponents = {
-	a: dynamic(() => import('./docs/NextLink').then((mod) => mod.NextLink)),
-	p: dynamic(() => import('./docs/Paragraph').then((mod) => mod.Paragraph)),
-	blockquote: dynamic(() => import('./docs/Blockquote').then((mod) => mod.Blockquote)),
-	li: dynamic(() => import('./docs/ListItem').then((mod) => mod.ListItem)),
-	h1: dynamic(() => import('./docs/Headings').then((mod) => mod.H1)),
-	h2: dynamic(() => import('./docs/Headings').then((mod) => mod.H2)),
-	h3: dynamic(() => import('./docs/Headings').then((mod) => mod.H3)),
-	h4: dynamic(() => import('./docs/Headings').then((mod) => mod.H4)),
-	h5: dynamic(() => import('./docs/Headings').then((mod) => mod.H5)),
-	h6: dynamic(() => import('./docs/Headings').then((mod) => mod.H6)),
-	inlineCode: dynamic(() => import('./docs/InlineCode').then((mod) => mod.InlineCode)),
-	IconPallet: dynamic(() => import('./docs/IconPallet').then((mod) => mod.IconPallet)),
-	ColorTheme: dynamic(() => import('./docs/ColorTheme').then((mod) => mod.ColorTheme)),
+	a: dynamic(() => import('./mdx/NextLink').then((mod) => mod.NextLink)),
+	p: dynamic(() => import('./mdx/Paragraph').then((mod) => mod.Paragraph)),
+	blockquote: dynamic(() => import('./mdx/Blockquote').then((mod) => mod.Blockquote)),
+	li: dynamic(() => import('./mdx/ListItem').then((mod) => mod.ListItem)),
+	h1: dynamic(() => import('./mdx/Headings').then((mod) => mod.H1)),
+	h2: dynamic(() => import('./mdx/Headings').then((mod) => mod.H2)),
+	h3: dynamic(() => import('./mdx/Headings').then((mod) => mod.H3)),
+	h4: dynamic(() => import('./mdx/Headings').then((mod) => mod.H4)),
+	h5: dynamic(() => import('./mdx/Headings').then((mod) => mod.H5)),
+	h6: dynamic(() => import('./mdx/Headings').then((mod) => mod.H6)),
+	inlineCode: dynamic(() => import('./mdx/InlineCode').then((mod) => mod.InlineCode)),
+	IconPallet: dynamic(() => import('./mdx/IconPallet').then((mod) => mod.IconPallet)),
+	ColorTheme: dynamic(() => import('./mdx/ColorTheme').then((mod) => mod.ColorTheme)),
 	code: function Code({ children, initialCompiledResult, live, className }) {
 		return (
 			<CodeBlock

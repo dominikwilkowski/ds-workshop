@@ -1,7 +1,7 @@
 import { CodeHighlight } from './CodeHighlight';
 import { ReactLive } from './ReactLive';
 
-export const CodeBlock = ({ className, code, demo, initialCompiledResult, live, metastring, scope }) => {
+export function CodeBlock({ className, code, demo, initialCompiledResult, live, metastring, scope }) {
 	const language = className?.replace(/language-/, '');
 
 	if (live) {
@@ -29,4 +29,4 @@ export const CodeBlock = ({ className, code, demo, initialCompiledResult, live, 
 			<CodeHighlight metastring={metastring} code={code} language={language} />
 		</pre>
 	);
-};
+}

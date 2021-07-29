@@ -12,6 +12,9 @@ export function InlineCode(props) {
 				fontSize: '85%',
 				fontFamily: 'var(--font-mono)',
 				wordBreak: 'break-all',
+				'a &': {
+					textDecoration: 'underline',
+				},
 			}}
 			{...props}
 		/>

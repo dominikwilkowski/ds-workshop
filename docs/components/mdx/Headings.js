@@ -12,7 +12,7 @@ export function H1(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
-						borderBottom: '1px solid var(--text)',
+						borderBottom: '1px solid var(--link)',
 					},
 				}}
 				{...props}
@@ -33,7 +33,7 @@ export function H2(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
-						borderBottom: '1px solid var(--text)',
+						borderBottom: '1px solid var(--link)',
 					},
 				}}
 				{...props}
@@ -54,7 +54,7 @@ export function H3(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
-						borderBottom: '1px solid var(--text)',
+						borderBottom: '1px solid var(--link)',
 					},
 				}}
 				{...props}
@@ -75,7 +75,7 @@ export function H4(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
-						borderBottom: '1px solid var(--text)',
+						borderBottom: '1px solid var(--link)',
 					},
 				}}
 				{...props}
@@ -96,7 +96,7 @@ export function H5(props) {
 					marginBottom: '0.5rem',
 					'& a': {
 						color: 'inherit',
-						borderBottom: '1px solid var(--text)',
+						borderBottom: '1px solid var(--link)',
 					},
 				}}
 				{...props}
@@ -115,7 +115,7 @@ export function H6(props) {
 				marginBottom: '0.5rem',
 				'& a': {
 					color: 'inherit',
-					borderBottom: '1px solid var(--text)',
+					borderBottom: '1px solid var(--link)',
 				},
 			}}
 			{...props}

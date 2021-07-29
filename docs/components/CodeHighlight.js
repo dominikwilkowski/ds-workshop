@@ -12,7 +12,7 @@ import { theme } from './prism-theme';
 	});
 });
 
-const getShouldHighlightLine = (meta) => {
+function getShouldHighlightLine(meta) {
 	const pattern = /{([\d,-]+)}/;
 	const result = pattern.exec(meta);
 
@@ -22,9 +22,9 @@ const getShouldHighlightLine = (meta) => {
 	} else {
 		return () => false;
 	}
-};
+}
 
-export const CodeHighlight = ({ code, language, metastring }) => {
+export function CodeHighlight({ code, language, metastring }) {
 	const shouldHighlightLine = getShouldHighlightLine(metastring);
 
 	return (
@@ -61,4 +61,4 @@ export const CodeHighlight = ({ code, language, metastring }) => {
 			)}
 		</PrismHighlight>
 	);
-};
+}

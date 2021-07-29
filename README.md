@@ -1,4 +1,4 @@
-# Sample Design System
+# Design System Workshop
 
 > This is a sample repository that shows you my latest thinking in how to setup a component library including a documentation site
 
@@ -21,21 +21,14 @@ I chose [emotion](https://emotion.sh) for our CSS-in-JS lib to make sure our sty
 I have kept the code to simple JavaScript instead of Typescript.
 I would recommend you use Typescript in production systems since a component library is all about public APIs and Typescript is a great tool to document those APIs easily.
 
-#### [core](./packages/core)
-
-The core component makes sure we deliver a CSS reset, make _global tokens_ available to the rest of the system and even comes with an `SSRTheme` component and a `DarkModeBtn` to make working with the theme easier.
-
-#### [button](./packages/button)
-
-The button component is one of the most common components found in component libraries. This one is kept very simple and is built specifically to work with [NextJs](https://nextjs.org/).
-
-#### [icons](./packages/icons)
-
-An icon component to show how we deal with multiple entrypoints in a single package to enable tree shaking.
-
-#### [stack](./packages/stack)
-
-I included this component to show that simple layout component can be a very powerful tool for your Design System.
+- [core](./packages/core)<br/>
+  The core component makes sure we deliver a CSS reset, make _global tokens_ available to the rest of the system and even comes with an `SSRTheme` component and a `DarkModeBtn` to make working with the theme easier. The tokens are being distributed via [`CSS custom properties aka CSS variables`](https://developer.mozilla.org/en-US/docs/Web/CSS/--*).
+- [button](./packages/button)<br/>
+  The button component is one of the most common components found in component libraries. This one is kept very simple and is built specifically to work with [NextJs](https://nextjs.org/). It also shows how you might implement _local tokens_.
+- [icons](./packages/icons)<br/>
+  An icon component to show how we deal with multiple entrypoints in a single package to enable tree shaking.
+- [stack](./packages/stack)<br/>
+  I included this component to show that simple layout component can be a very powerful tool for your Design System.
 
 ### Yarn workspaces
 
@@ -68,17 +61,15 @@ It allows us to:
 
 ### Changesets
 
-?> Note that this tool is not installed yet.
+?> Note that this tool is not installed yet in this repo.
 
 Lastly we use [changesets](https://github.com/atlassian/changesets) to manage changelogs and publishing of versions.
 It gives us a workflow to make sure we track all changes, thank the contributors and publish our packages automatically.
 
 ### Docs
 
-https://nextjs.org/
+The docs site has been built with [NextJs](https://nextjs.org/) and uses the `README.md` files of each package folder for the documentation.
 
 #### MDX for documentation
 
-https://mdxjs.com
-
-https://github.com/hashicorp/next-mdx-remote
+Those `README.md` files are being parsed as [`mdx`](https://mdxjs.com) and digested by [`next-mdx-remote`](https://github.com/hashicorp/next-mdx-remote) so we can use them in our Next site.

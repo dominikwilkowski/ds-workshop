@@ -1,27 +1,29 @@
-import { Highlight } from '../../components/Highlight';
-import { Layout } from '../../components/Layout';
-import { getAllPkgs } from '../../lib/mdxUtils';
-import { Type } from '@ds-workshop/type';
+import { MDXRemote } from 'next-mdx-remote';
+import { normalize } from 'path';
 
-export default function PackagesHome({ pkgs }) {
+import { getAllPkgs, getMarkdown } from '../../lib/mdxUtils';
+import { mdxComponents } from '../../components/utils';
+import { EditPage } from '../../components/EditPage';
+import { Layout } from '../../components/Layout';
+
+export default function PackagesHome({ pkgs, source }) {
 	return (
 		<Layout pkgs={pkgs}>
-			<Type as="h1" look="heading84" css={{ margin: '0 0 1rem 0' }}>
-				<Highlight look="grad3">Packages</Highlight>
-			</Type>
-			<Type as="p" look="body24bold" css={{ marginBottom: '3rem' }}>
-				Choose from the packages in the left sidebar to see their documentation
-			</Type>
+			<MDXRemote {...source} components={mdxComponents} />
+
+			<EditPage slug="/packages" />
 		</Layout>
 	);
 }
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
 	const pkgs = await getAllPkgs();
+	const { source } = await getMarkdown(normalize(`${process.cwd()}/../packages/README.md`));
 
 	return {
 		props: {
 			pkgs,
+			source,
 		},
 	};
-};
+}

@@ -53,7 +53,7 @@ function Header({ code }) {
 	);
 }
 
-export const ReactLive = ({ code, demo, scope, initialCompiledResult }) => {
+export function ReactLive({ code, demo, scope, initialCompiledResult }) {
 	const collapsible = useRef(false);
 	const wrapper = useRef(null);
 	const [collapsed, setCollapsed] = useState(true);
@@ -205,4 +205,4 @@ export const ReactLive = ({ code, demo, scope, initialCompiledResult }) => {
 			)}
 		</div>
 	);
-};
+}
