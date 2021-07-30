@@ -22,7 +22,7 @@ const styleMap = {
 		'--button-color-hover': 'var(--app-bg)',
 		'--button-color-active': 'var(--app-bg)',
 		'--button-color-disabled': 'var(--brand-bg--40)',
-		'--button-border': '1px solid var(--border)',
+		'--button-border': '1px solid var(--link)',
 		'--button-border-hover': '1px solid var(--brand-bg-90)',
 		'--button-border-active': '1px solid var(--brand-bg-90)',
 		'--button-border-disabled': '1px solid var(--brand-bg--40)',
@@ -36,6 +36,7 @@ const styleMap = {
 		'--button-bg-active': 'transparent',
 		'--button-color': 'var(--link)',
 		'--button-color-hover': 'var(--link)',
+		'--button-color-active': 'var(--link)',
 		'--button-color-disabled': 'var(--disabled)',
 		'--button-decoration-hover': 'underline',
 		'--button-bg-disabled': 'transparent',
@@ -174,8 +175,8 @@ export const Button = forwardRef(
 							verticalAlign: 'middle',
 							margin: 0,
 						},
-						...styleMap[look],
 						...sizeMap[size],
+						...styleMap[look],
 					}}
 					aria-disabled={disabled ? true : undefined}
 					disabled={loading || disabled}

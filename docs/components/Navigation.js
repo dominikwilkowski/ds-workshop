@@ -27,7 +27,7 @@ function List(props) {
 				padding: 0,
 				margin: 0,
 				'& li': {
-					margin: '0.5rem 0',
+					margin: '0.5rem 0', // focus offset = 3px
 				},
 				'& li:first-of-type': {
 					marginTop: 0,
@@ -51,7 +51,6 @@ export function Navigation({ pkgs, ...props }) {
 				css={{
 					position: 'sticky',
 					top: '1rem',
-					overflow: 'auto',
 				}}
 			>
 				<DarkModeBtn

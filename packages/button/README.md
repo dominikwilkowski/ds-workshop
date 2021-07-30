@@ -59,13 +59,13 @@ These are the allowed sizes the button supports:
 - `large`
 
 ```jsx live
-<Stack>
-	<Stack orientation="horizontal">
+<Stack orientation="horizontal">
+	<Stack>
 		<Button size="small">Small default button</Button>
 		<Button>Default button</Button>
 		<Button size="large">Large default button</Button>
 	</Stack>
-	<Stack orientation="horizontal">
+	<Stack>
 		<Button size="small" look="danger">
 			Small danger button
 		</Button>
@@ -74,7 +74,7 @@ These are the allowed sizes the button supports:
 			Large danger button
 		</Button>
 	</Stack>
-	<Stack orientation="horizontal">
+	<Stack>
 		<Button size="small" look="soft">
 			Small soft button
 		</Button>
@@ -83,7 +83,7 @@ These are the allowed sizes the button supports:
 			Large soft button
 		</Button>
 	</Stack>
-	<Stack orientation="horizontal">
+	<Stack>
 		<Button size="small" look="text">
 			Small text button
 		</Button>
