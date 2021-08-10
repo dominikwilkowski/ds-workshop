@@ -8,8 +8,7 @@ export function Core({ children }) {
 	return (
 		<Fragment>
 			<Global styles={reset} />
-			<Theme />
-			{children}
+			<Theme>{children}</Theme>
 		</Fragment>
 	);
 }

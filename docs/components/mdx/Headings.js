@@ -38,7 +38,7 @@ const commonStyles = {
 };
 
 export function H1({ children, ...props }) {
-	const slug = slugify(children.replace('[object Object]', ''));
+	const slug = slugify(children.toString().replace('[object Object]', ''));
 	return (
 		<h1 id={slug} css={commonStyles}>
 			<Highlight
@@ -63,7 +63,7 @@ export function H1({ children, ...props }) {
 }
 
 export function H2({ children, ...props }) {
-	const slug = slugify(children.replace('[object Object]', ''));
+	const slug = slugify(children.toString().replace('[object Object]', ''));
 	return (
 		<h2 id={slug} css={commonStyles}>
 			<Highlight
@@ -88,7 +88,7 @@ export function H2({ children, ...props }) {
 }
 
 export function H3({ children, ...props }) {
-	const slug = slugify(children.replace('[object Object]', ''));
+	const slug = slugify(children.toString().replace('[object Object]', ''));
 	return (
 		<h3 id={slug} css={commonStyles}>
 			<Highlight
@@ -113,7 +113,7 @@ export function H3({ children, ...props }) {
 }
 
 export function H4({ children, ...props }) {
-	const slug = slugify(children.replace('[object Object]', ''));
+	const slug = slugify(children.toString().replace('[object Object]', ''));
 	return (
 		<h4 id={slug} css={commonStyles}>
 			<Highlight
@@ -138,7 +138,7 @@ export function H4({ children, ...props }) {
 }
 
 export function H5({ children, ...props }) {
-	const slug = slugify(children.replace('[object Object]', ''));
+	const slug = slugify(children.toString().replace('[object Object]', ''));
 	return (
 		<h5 id={slug} css={commonStyles}>
 			<Highlight
@@ -163,7 +163,7 @@ export function H5({ children, ...props }) {
 }
 
 export function H6({ children, ...props }) {
-	const slug = slugify(children.replace('[object Object]', ''));
+	const slug = slugify(children.toString().replace('[object Object]', ''));
 	return (
 		<h6
 			id={slug}
