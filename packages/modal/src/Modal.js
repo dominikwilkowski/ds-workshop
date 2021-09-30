@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Fragment } from 'react';
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import FocusLock from 'react-focus-lock';
 
