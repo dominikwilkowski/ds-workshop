@@ -47,6 +47,8 @@ export const COLORS = {
 		'--shadow': 'rgba(22, 107, 255, 0.1)',
 		'--selection': '#d5e0fc',
 		'--selection-text': '#000',
+		'--shadow1': 'rgba(34, 34, 34, 0.2)',
+		'--shadow2': 'rgba(0, 0, 0, 0)',
 
 		'--info': '#0299e7',
 		'--info-bg': 'rgba(2, 153, 231, 0.1)',
@@ -91,6 +93,8 @@ export const COLORS = {
 		'--shadow': 'rgba(0, 0, 0, 0.2)',
 		'--selection': '#2549A1',
 		'--selection-text': '#fff',
+		'--shadow1': 'rgba(0, 0, 0, 0.6)',
+		'--shadow2': 'rgba(0, 0, 0, 0)',
 
 		'--info': '#0299e7',
 		'--info-bg': 'rgba(2, 153, 231, 0.05)',

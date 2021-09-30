@@ -1,6 +1,6 @@
+import React, { useState, Fragment } from 'react';
 import { jsx } from '@emotion/react';
 import dynamic from 'next/dynamic';
-import React from 'react';
 
 import { CodeBlock } from './CodeBlock';
 
@@ -9,16 +9,19 @@ const packages = {
 	Core: dynamic(() => import('@ds-workshop/core').then((mod) => mod.Core)),
 	DarkModeBtn: dynamic(() => import('@ds-workshop/core').then((mod) => mod.DarkModeBtn)),
 	Emoji: dynamic(() => import('@ds-workshop/emoji').then((mod) => mod.Emoji)),
-	Loading: dynamic(() => import('@ds-workshop/loading').then((mod) => mod.Loading)),
-	Stack: dynamic(() => import('@ds-workshop/stack').then((mod) => mod.Stack)),
 	Cli: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Cli)),
 	Copy: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Copy)),
 	Lab: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Lab)),
 	Roadmap: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Roadmap)),
 	Shield: dynamic(() => import('@ds-workshop/icons').then((mod) => mod.Shield)),
+	Loading: dynamic(() => import('@ds-workshop/loading').then((mod) => mod.Loading)),
+	Modal: dynamic(() => import('@ds-workshop/modal').then((mod) => mod.Modal)),
+	Stack: dynamic(() => import('@ds-workshop/stack').then((mod) => mod.Stack)),
 	Type: dynamic(() => import('@ds-workshop/type').then((mod) => mod.Type)),
 
 	Box: dynamic(() => import('./mdx/Box').then((mod) => mod.Box)),
+	Illustration: dynamic(() => import('./mdx/Illustration').then((mod) => mod.Illustration)),
+	Fragment,
 };
 
 export const mdxComponents = {
@@ -40,7 +43,7 @@ export const mdxComponents = {
 			<CodeBlock
 				code={children.trim()}
 				initialCompiledResult={initialCompiledResult}
-				scope={{ ...packages, React: { ...React, createElement: jsx } }}
+				scope={{ ...packages, useState, React: { ...React, createElement: jsx } }}
 				live={live}
 				className={className}
 			/>

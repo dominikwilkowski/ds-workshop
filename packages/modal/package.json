@@ -1,0 +1,25 @@
+{
+	"name": "@ds-workshop/modal",
+	"version": "1.0.0",
+	"scripts": {},
+	"main": "dist/ds-workshop-modal.cjs.js",
+	"module": "dist/ds-workshop-modal.esm.js",
+	"dependencies": {
+		"@babel/runtime": "^7.14.6",
+		"@ds-workshop/button": "^1.0.0",
+		"@ds-workshop/core": "^1.0.0",
+		"@ds-workshop/type": "^1.0.0",
+		"react-dom": "^17.0.2",
+		"react-focus-lock": "^2.5.2"
+	},
+	"peerDependencies": {
+		"@emotion/react": "^11.4.0",
+		"react": "^17.0.2"
+	},
+	"devDependencies": {
+		"@emotion/react": "^11.4.0",
+		"react": "^17.0.2"
+	},
+	"license": "GPL-3.0",
+	"repository": "https://github.com/dominikwilkowski/ds-workshop/tree/main/packages/modal"
+}

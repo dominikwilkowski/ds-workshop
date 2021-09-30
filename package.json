@@ -14,7 +14,7 @@
 		"test:prettier": "prettier --list-different \"**/*.{js,json,md,mdx}\"",
 		"test": "yarn test:prettier && yarn test:eslint",
 		"dep:fix": "manypkg fix && preconstruct fix",
-		"dep:check": "manypkg check && preconstruct build && preconstruct dev",
+		"dep:test": "manypkg check && preconstruct build && preconstruct dev",
 		"dep:dev": "preconstruct dev",
 		"build": "preconstruct build",
 		"build:docs": "manypkg run @ds-workshop/docs build && manypkg run @ds-workshop/docs export",
