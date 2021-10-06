@@ -5,7 +5,7 @@ import FocusLock from 'react-focus-lock';
 import { Button } from '@ds-workshop/button';
 import { Type } from '@ds-workshop/type';
 
-export function Modal({ isOpen, onClose, children, title, header: Header, controls, ...props }) {
+export function Modal({ isOpen, onClose = () => {}, children, title, header: Header, controls = {}, blank, ...props }) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [wrapper] = useState(() => {
 		if (typeof document !== 'undefined') {
@@ -77,9 +77,9 @@ export function Modal({ isOpen, onClose, children, title, header: Header, contro
 							width: '480px',
 							maxHeight: 'calc(100vh - 1em)',
 							borderRadius: '12px',
-							padding: '1.5rem 0',
+							padding: blank ? 0 : '1.5rem 0',
 							background: 'var(--app-bg)',
-							textAlign: 'center',
+							textAlign: blank ? 'inherit' : 'center',
 							overflow: 'hidden',
 							boxShadow: 'var(--shadow1) 0 4px 16px',
 							zIndex: 101,
@@ -97,7 +97,7 @@ export function Modal({ isOpen, onClose, children, title, header: Header, contro
 						<div
 							css={{
 								overflow: 'auto',
-								padding: '0 1.5rem',
+								padding: blank ? 0 : '0 1.5rem',
 								background:
 									'linear-gradient(var(--app-bg) 33%, var(--app-bg)),' +
 									'linear-gradient(var(--app-bg), var(--app-bg) 66%) 0 100%,' +

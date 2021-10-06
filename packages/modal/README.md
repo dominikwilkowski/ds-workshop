@@ -102,6 +102,31 @@ return (
 );
 ```
 
+## Blank modal
+
+You can use the modal as a blank empty container to add in anything that may want to be edge to edge like videos.
+
+Tip: The backdrop click will be disabled if you don't pass in an `onClose` function.
+
+```jsx live
+const [open, setOpen] = useState(false);
+
+return (
+	<Fragment>
+		<Button look="text" onClick={() => setOpen(!open)}>
+			Open modal
+		</Button>
+
+		<Modal isOpen={open} blank>
+			Blank content where we have to handle our own close button
+			<button onClick={() => setOpen(false)}>Close</button>
+		</Modal>
+	</Fragment>
+);
+```
+
+````
+
 ## Long text modal
 
 This is what the modal looks like when the content of the modal is larger than the window.
@@ -159,4 +184,4 @@ return (
 		</Modal>
 	</Fragment>
 );
-```
+````
